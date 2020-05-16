@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "64a47249-893d-49d8-9741-2dd91a35d5a7",
+		"name": "Splunk HEC",
+		"description": "SPLUNK HEC (Http Event Collector)\n\nCollection created as a sample on how to send data to Splunk using http requests.\n\nThis collections was created by Fábio Caldas (splunk@fabiocaldas.com).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send JSON Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Splunk {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"event\": \"hello world\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}:{{port}}/{{endpoint_json}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"{{endpoint_json}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send RAW Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Splunk {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"event\": \"hello world\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{host}}:{{port}}/{{endpoint_raw}}",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"{{endpoint_raw}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9f104752-cc74-4f58-b981-821ad7e5f144",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6ea76021-7cfd-4e62-911e-e62d9048c93d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b04c37e6-bec0-467b-8a6d-bc899c6e3d46",
+			"key": "protocol",
+			"value": "https",
+			"type": "string"
+		},
+		{
+			"id": "435fa835-a34b-4553-9d86-d052cec70da2",
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"id": "b1f2294e-244c-4a5c-8b37-05fa88ba0969",
+			"key": "port",
+			"value": "8088",
+			"type": "string"
+		},
+		{
+			"id": "57b5823e-e24c-4719-a683-166ff8917b41",
+			"key": "endpoint_json",
+			"value": "/services/collector",
+			"type": "string"
+		},
+		{
+			"id": "cbadd33d-3bb6-4075-9937-cb95b2741cca",
+			"key": "endpoint_raw",
+			"value": "services/collector/raw",
+			"type": "string"
+		},
+		{
+			"id": "f285b4f6-61c3-42cb-8376-886001684e91",
+			"key": "token",
+			"value": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
