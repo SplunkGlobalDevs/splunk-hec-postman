@@ -58,15 +58,15 @@
 					{
 						"key": "Content-Type",
 						"type": "text",
-						"value": "application/json"
+						"value": "text/plain"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"event\": \"hello world\"}",
+					"raw": "hello world",
 					"options": {
 						"raw": {
-							"language": "json"
+							"language": "text"
 						}
 					}
 				},
@@ -109,37 +109,37 @@
 	],
 	"variable": [
 		{
-			"id": "b04c37e6-bec0-467b-8a6d-bc899c6e3d46",
+			"id": "92e88f2c-b775-4fac-b152-33f29a36193e",
 			"key": "protocol",
 			"value": "https",
 			"type": "string"
 		},
 		{
-			"id": "435fa835-a34b-4553-9d86-d052cec70da2",
+			"id": "cd656ba6-6ba5-45a4-a73f-4d4016e76493",
 			"key": "host",
 			"value": "localhost",
 			"type": "string"
 		},
 		{
-			"id": "b1f2294e-244c-4a5c-8b37-05fa88ba0969",
+			"id": "84a33ea0-8b89-4df0-b7cf-cf586f5191a6",
 			"key": "port",
 			"value": "8088",
 			"type": "string"
 		},
 		{
-			"id": "57b5823e-e24c-4719-a683-166ff8917b41",
+			"id": "786ea985-aff2-42c2-af19-a3facf51c3e6",
 			"key": "endpoint_json",
 			"value": "/services/collector",
 			"type": "string"
 		},
 		{
-			"id": "cbadd33d-3bb6-4075-9937-cb95b2741cca",
+			"id": "1edd9c28-34e1-46c3-a646-9ce06074483b",
 			"key": "endpoint_raw",
 			"value": "services/collector/raw",
 			"type": "string"
 		},
 		{
-			"id": "f285b4f6-61c3-42cb-8376-886001684e91",
+			"id": "d055d814-2b93-4f0d-bf08-35e716581c27",
 			"key": "token",
 			"value": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
 			"type": "string"
